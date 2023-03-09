@@ -12,7 +12,7 @@ body {
   background-size: cover;
 }
 
-form {
+section {
   text-align: center;
   margin: auto;
   width: 200px;
@@ -31,81 +31,66 @@ form {
   gap: 1em;
 }
 
-/* L'interrupteur */
 .switch {
   position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+  height: 2em;
+  width: 3.7em;
 }
-
-/* Cacher la checkbox HTML par défaut */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* Slider */
-.slider {
+.switch-line {
   position: absolute;
-  cursor: pointer;
-  top: 0;
+  z-index: 5;
+  top: 25%;
+  background-color: #909090;
+  height: 1em;
+  width: 3.8em;
+  border-radius: 2em;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transition: all 250ms ease-in;
+}
+.switch-circle {
+  position: absolute;
+  z-index: 10;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.good input:checked + .slider {
-  background-color: #2ac64c;
-}
-
-.cheap input:checked + .slider {
-  background-color: #2196f3;
-}
-
-.fast input:checked + .slider {
-  background-color: #d52d2d;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
+  background-color: #DCDCDC;
+  height: 2em;
+  width: 2em;
   border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 250ms ease-in;
 }
 
-@media screen and (max-width: 768px) {
-  .laptop {
-    display: none;
-  }
-  .mobile {
-    display: flex;
-  }
+/* Good */
+.good .switch.active .switch-line {
+  background-color: #2a49c6;
+  transition: all 250ms ease-in;
+}
+.good .switch.active .switch-circle {
+  left: 48%;
+  background-color: #2a40c6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 250ms ease-in;
+}
+
+/* Cheap */
+.cheap .switch.active .switch-line {
+  background-color: #2ac64c;
+  transition: all 250ms ease-in;
+}
+.cheap .switch.active .switch-circle {
+  left: 48%;
+  background-color: #2ac64c;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 250ms ease-in;
+}
+
+/* Fast */
+.fast .switch.active .switch-line {
+  background-color: #c62f2a;
+  transition: all 250ms ease-in;
+}
+.fast .switch.active .switch-circle {
+  left: 48%;
+  background-color: #c62f2a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 250ms ease-in;
 }

@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: FTP://89.117.169.162
+        server: 89.117.169.162
         username: u237487156.melon.deploiement.dev
         password: ${{ secrets.ftp_password }}

@@ -13,4 +13,4 @@ jobs:
       with:
         server: FTP://89.117.169.162
         username: u237487156.melon.deploiement.dev
-        password: ${{ secrets.ftp_password }}
+        password: ${{ fADT%d7E#&YA5P }}
